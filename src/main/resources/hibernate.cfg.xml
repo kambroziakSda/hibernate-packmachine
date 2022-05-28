@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--Klasa sterownika do bazy danych-->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- Definicja połączenia do bazy: host:port/nazwa_bazy -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate-packmachine</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <!-- Klasa pozwalająca na generowanie optymalnych zapytań pod konkretną bazę, hibernate potrafi sam ją dobrać na podstawie info w połączeniu do bazy -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <property name="jakarta.persistence.schema-generation.database.action">drop-and-create</property>
+        <property name="jakarta.persistence.schema-generation.create-source">metadata</property>
+        <property name="jakarta.persistence.schema-generation.drop-source">metadata</property>
+        <property name="jakarta.persistence.schema-generation.scripts.action">create</property>
+        <property name="jakarta.persistence.schema-generation.scripts.create-target">generated-schema.sql</property>
+
+    </session-factory>
+</hibernate-configuration>
