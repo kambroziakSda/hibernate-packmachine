@@ -2,6 +2,7 @@ package packmachine.http;
 
 import io.undertow.Undertow;
 import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
+import packmachine.hibernate.HibernateHelper;
 
 import java.io.IOException;
 
@@ -17,6 +18,8 @@ public class App
 
 
         buildServer();
+
+        HibernateHelper.INSTANCE.getSession();
     }
 
     private static void buildServer() {
