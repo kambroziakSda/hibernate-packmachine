@@ -24,7 +24,7 @@ public class CityResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addCity(CityCreateRequest request) {
         logger.info("Received: " + request);
-        return Response.ok().build();
+        return Response.ok(new CityResponse(request.getName())).build();
     }
 
     // TODO: 28.05.2022 Pobranie wszystkich miast z bazy. Jeśli pageSize lub pageNo == null wtedy wyciągamy po protu wszystko
