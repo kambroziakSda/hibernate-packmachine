@@ -2,6 +2,7 @@ package packmachine.http;
 
 import io.undertow.Undertow;
 import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
+import packmachine.hibernate.HibernateHelper;
 
 import java.io.IOException;
 
@@ -14,7 +15,7 @@ public class App
     public static void main( String[] args ) throws IOException {
        // HttpResponse response = executeRequest();
        // handleResponse(response);
-
+        HibernateHelper.INSTANCE.init();
 
         buildServer();
     }
